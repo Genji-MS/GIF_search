@@ -1,6 +1,9 @@
-
+{% extends 'base.html' %}
+<!-- √: Extend 'base.html' and put content into a block 'body' to match -->
 {% block body %}
 <div class="search">
+    <!-- √: Make an HTML form containing a search box and a submit button to add
+        the search term to the query string -->
     <form action = "">
         <input type = "text" name = "query" placeholder="Search for...">
         <button type = "submit">Submit Search</button>
@@ -8,13 +11,9 @@
     <p>query is : {{query}}</p>
 </div>
 
-{% for each_gif in gifs_returned %}
+<!-- √: Make a for loop to loop over GIFs passed in from the server -->
+{% for gif in gif_list %}
+<!-- √: For each gif, include the 'gif.html' template to display it (literally don't use 'for each' lol-->
     {% include 'gif.html' %}
 {% endfor %}
 {% endblock %}
-
-<!-- √: Extend 'base.html' and put content into a block 'body' to match -->
-<!-- √: Make an HTML form containing a search box and a submit button to add
-the search term to the query string -->
-<!-- √: Make a for loop to loop over GIFs passed in from the server -->
-<!-- √: For each gif, include the 'gif.html' template to display it -->
