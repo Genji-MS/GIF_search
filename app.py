@@ -19,9 +19,9 @@ def index():
     # √: convert the request into .json and filter to just the results
     gif_json = r.json()
     gif_list = gif_json['results']
+    # √: pass the resulting list of gifs back to the page
     if len(gif_list) == 0:
         return render_template('index.html', query = 'Theres nothing found for the search : '+query, gif_list= gif_list)
-    # √: pass the resulting list of gifs back to the page
     else:
         search_term = 'Showing GIFs for : '+query
         return render_template('index.html', query = search_term, gif_list= gif_list)
