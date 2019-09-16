@@ -7,7 +7,9 @@
         the search term to the query string -->
         <form action = "/">
             <input class="search" type ="text" name ="query" placeholder="Search for...">
-            <button type="submit">Submit Search</button>
+            <button type="submit" name ="search_buttons" value="search">Submit Search</button>
+            <button type="submit" name ="search_buttons" value="trending">Trending GIFs</button>
+            <button type="submit" name ="search_buttons" value="random">Random GIFs</button>
         </form>
         <p>{{query}}</p>
     </div>
